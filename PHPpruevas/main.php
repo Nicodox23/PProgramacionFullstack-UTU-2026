@@ -70,5 +70,13 @@ $Promedio =(($Nota1 + $Nota2 + $Nota3)/ 3 );
 
 echo "promedio" . $Promedio ."\n";
 
+$minutosTotales = 135;
+$horas = (int)($minutosTotales / 60);
+$minutos = $minutosTotales % 60;
+
+echo $minutosTotales . " minutos en total " ."\n";
+echo $horas . " horas  " ."\n";
+echo $minutos . " minutos" . "\n";
+
 
 ?>
