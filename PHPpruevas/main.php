@@ -115,6 +115,22 @@ if ($edad >= 18) {
 echo "Edad: " . $edad . "\n";
 
 
+// texto numero
+
+$numero = 10;
+$Texto = "10";
+
+if ($numero == $Texto) {
+    echo "El número y el texto son iguales\n";
+
+} elseif ($numero === $Texto) {
+    echo "El número y el texto son idénticos\n";
+}
+
+
+
+
+
 //stock y presupuesto
 
 $stockDisponible = 10;
