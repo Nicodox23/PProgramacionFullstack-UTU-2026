@@ -154,5 +154,102 @@ if ($stockDisponible >= $cantidadSolicitada) {
     echo "No hay stock \n";
 }
 
+//puntos de juego
+
+$puntos = 50;
+
+if ($puntos >= 50) {
+    echo "Gano\n";
+} else {
+    echo "Perdio\n";
+}
+
+// Positivo, negativo o cero
+
+$numero = -5;
+
+if ($numero > 0) {
+    echo "Positivo\n";
+} elseif ($numero < 0) {
+    echo "Negativo\n";
+} else {
+    echo "Cero\n";
+}
+
+// Par o impar
+
+$numero = 8;
+
+if ($numero % 2 == 0) {
+    echo "Es par\n";
+} else {
+    echo "Es impar\n";
+}
+
+// Calificación de nota
+
+$nota = 9;
+
+if ($nota < 1 || $nota > 12) {
+    echo "Error\n";
+} elseif ($nota < 6) {
+    echo "Insuficiente\n";
+} elseif ($nota <= 8) {
+    echo "Aprobado\n";
+} elseif ($nota <= 10) {
+    echo "Muy bueno\n";
+} else {
+    echo "Excelente\n";
+}
+
+// Login y contraseña
+
+$usuario = "admin";
+$contrasena = "1234";
+
+if ($usuario == "admin" && $contrasena == "1234") {
+    echo "Inicio de sesión correcto\n";
+} else {
+    echo "Usuario o contraseña incorrectos\n";
+}
+
+// Acceso por rol
+
+$rol = "docente";
+
+if ($rol == "administrador" || $rol == "docente") {
+    echo "Acceso permitido\n";
+} else {
+    echo "Acceso denegado\n";
+}
+
+// Compra
+
+$precio = 100;
+$presupuesto = 500;
+$stock = 10;
+$cantidad = 4;
+
+$total = $precio * $cantidad;
+
+if ($stock >= $cantidad && $presupuesto >= $total) {
+    echo "Compra realizada\n";
+} else {
+    echo "No se puede realizar la compra\n";
+}
+
+//entrada o no / mayor o menor / acompañado 
+
+$edad = 16;
+$tieneEntrada = true;
+$acompanado = true;
+
+if (($edad >= 18 && $tieneEntrada) || ($edad < 18 && $acompanado)) {
+    echo "Puede entrar\n";
+} else {
+    echo "No puede entrar\n";
+}
+
 
 ?>
+
