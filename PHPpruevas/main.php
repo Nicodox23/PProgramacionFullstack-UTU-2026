@@ -347,7 +347,38 @@ for ($i = 1; $i <= 100; $i++) {
 
  echo "Numeros divicible entre 3: " . $contador . "\n";
 
+// contador con while
 
+$i = 1;
 
+while ($i <= 10) {
+    echo $i . "\n";
+    $i++;
+}
+
+// numeros pares con while
+$i = 2;
+
+while ($i <= 20) {
+    echo $i . "\n";
+    $i += 2;
+}
+
+//multiplicacion con while hasta el 64 
+$numero = 1;
+
+while ($numero < 100) {
+    echo $numero . "\n";
+    $numero = $numero * 2;
+}
+
+$ahorro = 0;
+$mes = 0;
+
+while ($ahorro < 5000) {
+    $mes++;
+    $ahorro += 500;
+    echo "Mes " . $mes . ": $" . $ahorro . "\n";
+}
 
 ?>
