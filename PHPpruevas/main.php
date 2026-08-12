@@ -398,7 +398,7 @@ saludarpersona("Juan");
 saludarpersona("Nicolás");
 saludarpersona("Ariana");
 
-// sumar numero
+// EJERCICIO 3 — SUMAR NÚMEROS
 
 function sumar($numero1, $numero2) {
     return $numero1 + $numero2;
@@ -409,7 +409,7 @@ $resultado = sumar(10, 5);
 echo "La suma es: " . $resultado . "\n";
 
 
-//calcuular total de compra
+// EJERCICIO 4 — CALCULAR PRECIO TOTAL
 
 function calcularTotal($precio, $cantidad) {
     return $precio * $cantidad;
@@ -422,8 +422,9 @@ echo "Total de la primera compra: $" . $total1 . "\n";
 echo "Total de la segunda compra: $" . $total2 . "\n";
 
 
+// BLOQUE 11 — FUNCIONES CON LÓGICA
 
-// mayor de eedad
+// EJERCICIO 1 — MAYOR DE EDAD
 
 function esMayorDeEdad($edad) {
     if ($edad >= 18) {
@@ -442,7 +443,7 @@ if (esMayorDeEdad($edad)) {
 }
 
 
-//numero par o impar
+// EJERCICIO 2 — NÚMERO PAR
 
 function esPar($numero) {
     if ($numero % 2 == 0) {
@@ -461,7 +462,7 @@ if (esPar($numero)) {
 }
 
 
-// aplicar descuento
+// EJERCICIO 3 — APLICAR DESCUENTO
 
 function aplicarDescuento($precio, $porcentaje) {
     $descuento = $precio * $porcentaje / 100;
@@ -473,7 +474,7 @@ $precioFinal = aplicarDescuento(1000, 10);
 echo "Precio final: $" . $precioFinal . "\n";
 
 
-//Nota dianl
+// EJERCICIO 4 — CALCULAR NOTA FINAL
 
 function calcularPromedio($nota1, $nota2, $nota3) {
     return ($nota1 + $nota2 + $nota3) / 3;
@@ -502,11 +503,11 @@ if (estaAprobado($promedio)) {
 }
 
 
+// BLOQUE 12 — ARRAYS INDEXADOS
 
+// EJERCICIO 1 — LISTA DE NOMBRES
 
-// lista de nombres
-
-$nombres = ["Ari", "Nico", "Luca", "Thiago", "Emanuel"];
+$nombres = ["Juan", "Pedro", "Lucas", "Martin", "Sofia"];
 
 echo $nombres[0] . "\n";
 echo $nombres[1] . "\n";
@@ -515,9 +516,9 @@ echo $nombres[3] . "\n";
 echo $nombres[4] . "\n";
 
 
-//recorrer nombres
+// recorrer nombres
 
-$nombres2 = ["Ari", "Nico", "Luca", "Thiago", "Emanuel"];
+$nombres2 = ["Ari", "Nico", "Luca", "Emanuel", "Thiago"];
 
 for ($i = 0; $i < count($nombres2); $i++) {
     echo $nombres2[$i] . "\n";
@@ -528,7 +529,7 @@ foreach ($nombres2 as $nombre) {
 }
 
 
-//lista de precios
+// lista de precios
 
 $precios = [100, 250, 500, 750, 1000];
 
@@ -556,4 +557,58 @@ echo "Suma con FOR: " . $suma . "\n";
 $suma2 = array_sum($numeros);
 
 echo "Suma con array_sum(): " . $suma2 . "\n";
-?>
+
+// numeros pares array
+
+$numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+foreach ($numeros as $numero) {
+
+    if ($numero % 2 == 0) 
+        {
+    echo $numero . "\n";
+  }
+
+}
+// nota <= a 6
+
+$notas= [5, 7, 8, 4, 6, 9];
+
+$aprovados = 0;
+
+foreach ($notas as $nota) {
+    if ($nota <= 6) {
+        $aprovados++;
+    }
+}
+
+echo "Cantidad de aprovados: " . $aprovados . "\n";
+
+
+$nombres = ["Ari", "Nico", "Luca", "Emanuel", "Thiago"];
+
+$buscarnombre = "Ari";
+$encontrado = false;
+
+foreach ($nombres as $nombre) {
+    if ($nombre == $buscarnombre) {
+        $encontrado = true;
+        break;
+    }
+}
+
+if ($encontrado) {
+    echo "El nombre fue encontrado\n";
+} else {
+    echo "El nombre no fue encontrado\n";
+}
+
+$numeros = [5, 10, 20, 50, 47];
+
+$mayor = $numeros[0];
+ foreach ($numeros as $numero) {
+    if ($numero > $mayor) {
+        $mayor = $numero;
+    }
+}
+echo "El número mayor es: " . $mayor . "\n";
