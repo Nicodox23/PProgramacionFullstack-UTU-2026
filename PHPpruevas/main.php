@@ -337,48 +337,223 @@
 //         {echo "numeros pares son 25 \n";
 // }
 
-$contador = 0;
+// $contador = 0;
 
-for ($i = 1; $i <= 100; $i++) {
-    if ($i % 3 == 0) {
-        $contador++;
-    }
-}
+// for ($i = 1; $i <= 100; $i++) {
+//     if ($i % 3 == 0) {
+//         $contador++;
+//     }
+// }
 
- echo "Numeros divicible entre 3: " . $contador . "\n";
+//  echo "Numeros divicible entre 3: " . $contador . "\n";
 
 // contador con while
 
-$i = 1;
+// $i = 1;
 
-while ($i <= 10) {
-    echo $i . "\n";
-    $i++;
-}
+// while ($i <= 10) {
+//     echo $i . "\n";
+//     $i++;
+// }
 
-// numeros pares con while
-$i = 2;
+// // numeros pares con while
+// $i = 2;
 
-while ($i <= 20) {
-    echo $i . "\n";
-    $i += 2;
-}
+// while ($i <= 20) {
+//     echo $i . "\n";
+//     $i += 2;
+// }
 
 //multiplicacion con while hasta el 64 
-$numero = 1;
+// $numero = 1;
 
-while ($numero < 100) {
-    echo $numero . "\n";
-    $numero = $numero * 2;
+// while ($numero < 100) {
+//     echo $numero . "\n";
+//     $numero = $numero * 2;
+// }
+
+//ahorro con while
+
+// $ahorro = 0;
+// $mes = 0;
+
+// while ($ahorro < 5000) {
+//     $mes++;
+//     $ahorro += 500;
+//     echo "Mes " . $mes . ": $" . $ahorro . "\n";
+// }
+
+//Saludo con funcion 
+
+function saludar() {
+    echo "bienvenido\n";
+}
+saludar();
+
+
+function saludarpersona($nombre) {
+    echo "Hola " . $nombre . "\n";
+}
+saludarpersona("Juan");
+saludarpersona("Nicolás");
+saludarpersona("Ariana");
+
+// sumar numero
+
+function sumar($numero1, $numero2) {
+    return $numero1 + $numero2;
 }
 
-$ahorro = 0;
-$mes = 0;
+$resultado = sumar(10, 5);
 
-while ($ahorro < 5000) {
-    $mes++;
-    $ahorro += 500;
-    echo "Mes " . $mes . ": $" . $ahorro . "\n";
+echo "La suma es: " . $resultado . "\n";
+
+
+//calcuular total de compra
+
+function calcularTotal($precio, $cantidad) {
+    return $precio * $cantidad;
 }
 
+$total1 = calcularTotal(100, 3);
+$total2 = calcularTotal(250, 4);
+
+echo "Total de la primera compra: $" . $total1 . "\n";
+echo "Total de la segunda compra: $" . $total2 . "\n";
+
+
+
+// mayor de eedad
+
+function esMayorDeEdad($edad) {
+    if ($edad >= 18) {
+        return true;
+    }
+
+    return false;
+}
+
+$edad = 20;
+
+if (esMayorDeEdad($edad)) {
+    echo "Es mayor de edad\n";
+} else {
+    echo "Es menor de edad\n";
+}
+
+
+//numero par o impar
+
+function esPar($numero) {
+    if ($numero % 2 == 0) {
+        return true;
+    }
+
+    return false;
+}
+
+$numero = 8;
+
+if (esPar($numero)) {
+    echo "El número es par\n";
+} else {
+    echo "El número es impar\n";
+}
+
+
+// aplicar descuento
+
+function aplicarDescuento($precio, $porcentaje) {
+    $descuento = $precio * $porcentaje / 100;
+    return $precio - $descuento;
+}
+
+$precioFinal = aplicarDescuento(1000, 10);
+
+echo "Precio final: $" . $precioFinal . "\n";
+
+
+//Nota dianl
+
+function calcularPromedio($nota1, $nota2, $nota3) {
+    return ($nota1 + $nota2 + $nota3) / 3;
+}
+
+function estaAprobado($promedio) {
+    if ($promedio >= 6) {
+        return true;
+    }
+
+    return false;
+}
+
+$nota1 = 8;
+$nota2 = 7;
+$nota3 = 5;
+
+$promedio = calcularPromedio($nota1, $nota2, $nota3);
+
+echo "Promedio: " . $promedio . "\n";
+
+if (estaAprobado($promedio)) {
+    echo "El estudiante está aprobado\n";
+} else {
+    echo "El estudiante está desaprobado\n";
+}
+
+
+
+
+// lista de nombres
+
+$nombres = ["Ari", "Nico", "Luca", "Thiago", "Emanuel"];
+
+echo $nombres[0] . "\n";
+echo $nombres[1] . "\n";
+echo $nombres[2] . "\n";
+echo $nombres[3] . "\n";
+echo $nombres[4] . "\n";
+
+
+//recorrer nombres
+
+$nombres2 = ["Ari", "Nico", "Luca", "Thiago", "Emanuel"];
+
+for ($i = 0; $i < count($nombres2); $i++) {
+    echo $nombres2[$i] . "\n";
+}
+
+foreach ($nombres2 as $nombre) {
+    echo $nombre . "\n";
+}
+
+
+//lista de precios
+
+$precios = [100, 250, 500, 750, 1000];
+
+echo "$" . $precios[0] . "\n";
+echo "$" . $precios[1] . "\n";
+echo "$" . $precios[2] . "\n";
+echo "$" . $precios[3] . "\n";
+echo "$" . $precios[4] . "\n";
+
+echo "Cantidad de precios: " . count($precios) . "\n";
+
+
+// suma elementos
+
+$numeros = [10, 20, 30, 40, 50];
+
+$suma = 0;
+
+for ($i = 0; $i < count($numeros); $i++) {
+    $suma = $suma + $numeros[$i];
+}
+
+echo "Suma con FOR: " . $suma . "\n";
+
+$suma2 = array_sum($numeros);
+
+echo "Suma con array_sum(): " . $suma2 . "\n";
 ?>
