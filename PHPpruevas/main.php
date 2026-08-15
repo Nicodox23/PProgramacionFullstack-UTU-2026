@@ -757,7 +757,7 @@ echo "Categoria: " . $producto["categoria"] . "\n";
 
 // venta producoto
 $producto = [
-    "nombre" => "Teclado",
+    "nombre" => "Auriculares",
     "precio" => 1200,
     "stock" => 5
 ];
