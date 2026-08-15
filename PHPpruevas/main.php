@@ -612,3 +612,167 @@ $mayor = $numeros[0];
     }
 }
 echo "El número mayor es: " . $mayor . "\n";
+
+
+
+// suma y promedio 
+$numeros = [10, 20, 30, 40, 50];
+
+$suma = 0;
+
+foreach ($numeros as $numero) {
+    $suma += $numero;
+}
+
+$cantidad = count($numeros);
+$promedio = $suma / $cantidad;
+
+echo "Suma total: $suma\n";
+echo "Cantidad de elementos: $cantidad\n";
+echo "Promedio: $promedio\n";
+
+//Aprobados y deasaprobado
+
+$notas = [4, 7, 5, 3, 9, 6];
+
+foreach ($notas as $nota) {
+    if ($nota >= 5) {
+        echo "Nota: $nota - Aprobada\n";
+    } else {
+        echo "Nota: $nota - Desaprobada\n";
+    }
+}
+
+//otro de notas
+$notas = [8, 4, 6, 3, 10, 5];
+
+$suma = 0;
+$aprobados = 0;
+$desaprobados = 0;
+
+foreach ($notas as $nota) {
+    echo "Nota: $nota\n";
+
+    $suma += $nota;
+
+    if ($nota >= 5) {
+        $aprobados++;
+    } else {
+        $desaprobados++;
+    }
+}
+
+$promedio = $suma / count($notas);
+
+echo "Promedio: $promedio\n";
+echo "Aprobados: $aprobados\n";
+echo "Desaprobados: $desaprobados\n";
+
+
+//alalisis de numeros
+
+
+$numeros = [12, 7, 25, 4, 18, 9, 30];
+
+$suma = 0;
+$pares = 0;
+$impares = 0;
+$mayor = $numeros[0];
+$menor = $numeros[0];
+
+foreach ($numeros as $numero) {
+    echo "$numero\n";
+
+    $suma += $numero;
+
+    if ($numero > $mayor) {
+        $mayor = $numero;
+    }
+
+    if ($numero < $menor) {
+        $menor = $numero;
+    }
+
+    if ($numero % 2 == 0) {
+        $pares++;
+    } else {
+        $impares++;
+    }
+}
+
+$promedio = $suma / count($numeros);
+
+echo "Suma: $suma\n";
+echo "Promedio: $promedio\n";
+echo "Mayor: $mayor\n";
+echo "Menor: $menor\n";
+echo "Pares: $pares\n";
+echo "Impares: $impares\n";
+
+//dastos personas
+$persona = [
+    "nombre" => "Nicolas",
+    "edad" => 18,
+    "ciudad" => "San José"
+];
+
+echo "Nombre: " . $persona["nombre"] . "\n";
+echo "Edad: " . $persona["edad"] . "\n";
+echo "Ciudad: " . $persona["ciudad"] . "\n";
+
+//Producto
+$producto = [
+    "nombre" => "Teclado",
+    "precio" => 1200,
+    "stock" => 5
+];
+
+echo "Producto: " . $producto["nombre"] . "\n";
+echo "Precio: $" . $producto["precio"] . "\n";
+echo "Stock: " . $producto["stock"] . "\n";
+
+//Producto modificado
+
+$producto = [
+    "nombre" => "Mouse",
+    "precio" => 800,
+    "stock" => 10
+];
+
+echo "Producto original:\n";
+echo "Nombre: " . $producto["nombre"] . "\n";
+echo "Precio: $" . $producto["precio"] . "\n";
+echo "Stock: " . $producto["stock"] . "\n";
+
+$producto["precio"] += 200;
+$producto["stock"] -= 2;
+$producto["categoria"] = "Periféricos";
+
+echo "\nProducto actualizado:\n";
+echo "Nombre: " . $producto["nombre"] . "\n";
+echo "Precio: $" . $producto["precio"] . "\n";
+echo "Stock: " . $producto["stock"] . "\n";
+echo "Categoria: " . $producto["categoria"] . "\n";
+
+
+// venta producoto
+$producto = [
+    "nombre" => "Teclado",
+    "precio" => 1200,
+    "stock" => 5
+];
+
+$cantidadSolicitada = 3;
+
+if ($cantidadSolicitada <= $producto["stock"]) {
+    $total = $producto["precio"] * $cantidadSolicitada;
+    $producto["stock"] -= $cantidadSolicitada;
+
+    echo "Venta realizada\n";
+    echo "Producto: " . $producto["nombre"] . "\n";
+    echo "Cantidad: $cantidadSolicitada\n";
+    echo "Total: $" . $total . "\n";
+    echo "Stock restante: " . $producto["stock"] . "\n";
+} else {
+    echo "Error: no hay suficiente stock.\n";
+}
