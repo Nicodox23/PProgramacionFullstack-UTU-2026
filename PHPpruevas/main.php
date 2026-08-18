@@ -776,3 +776,102 @@ if ($cantidadSolicitada <= $producto["stock"]) {
 } else {
     echo "Error: no hay suficiente stock.\n";
 }
+
+
+//mostrar productos
+
+
+$productos = [
+    [
+        "nombre" => "Laptop",
+        "precio" => 25000  ],
+    [
+        "nombre" => "Mouse",
+        "precio" => 1200 ],
+    [
+        "nombre" => "Teclado",
+        "precio" => 2500 ]
+];
+
+foreach ($productos as $producto) {
+    echo "Producto: " . $producto["nombre"] . "\n";
+    echo "Precio: $" . $producto["precio"] . "\n";
+    echo "\n";
+}
+
+
+
+//producto stock 0
+
+$productos = [
+    ["nombre" => "Laptop", "precio" => 25000, "stock" => 5],
+    ["nombre" => "Mouse", "precio" => 1200, "stock" => 0],
+    ["nombre" => "Teclado", "precio" => 2500, "stock" => 3]
+];
+
+if ($productos[0]["stock"] > 0) {
+    echo "Producto: " . $productos[0]["nombre"] . "\n";
+    echo "Precio: $" . $productos[0]["precio"] . "\n";
+    echo "Stock: " . $productos[0]["stock"] . "\n";
+}
+
+if ($productos[1]["stock"] > 0) {
+    echo "Producto: " . $productos[1]["nombre"] . "\n";
+    echo "Precio: $" . $productos[1]["precio"] . "\n";
+    echo "Stock: " . $productos[1]["stock"] . "\n";
+}
+
+if ($productos[2]["stock"] > 0) {
+    echo "Producto: " . $productos[2]["nombre"] . "\n";
+    echo "Precio: $" . $productos[2]["precio"] . "\n";
+    echo "Stock: " . $productos[2]["stock"] . "\n";
+}
+
+// mayor a 1000 
+
+$productos = [
+    ["nombre" => "Celular", "precio" => 15000, "stock" => 5],
+    ["nombre" => "Auriculares", "precio" => 800, "stock" => 10],
+    ["nombre" => "Monitor", "precio" => 5000, "stock" => 3]
+];
+
+if ($productos[0]["precio"] > 1000) {
+    echo "Producto: " . $productos[0]["nombre"] . "\n";
+    echo "Precio: $" . $productos[0]["precio"] . "\n";
+    echo "Stock: " . $productos[0]["stock"] . "\n";
+}
+
+if ($productos[1]["precio"] > 1000) {
+    echo "Producto: " . $productos[1]["nombre"] . "\n";
+    echo "Precio: $" . $productos[1]["precio"] . "\n";
+    echo "Stock: " . $productos[1]["stock"] . "\n";
+}
+
+if ($productos[2]["precio"] > 1000) {
+    echo "Producto: " . $productos[2]["nombre"] . "\n";
+    echo "Precio: $" . $productos[2]["precio"] . "\n";
+    echo "Stock: " . $productos[2]["stock"] . "\n";
+}
+// profe haga otra cosa ya aburre el php casi 900 lineas de codigo no sea malo gracia :)
+
+
+//Stock por precio y suma de coso stock = 1 no da para pensar mas
+
+
+$productos = [
+    ["nombre" => "Celular", "precio" => 15000, "stock" => 1],
+    ["nombre" => "Auriculares", "precio" => 800, "stock" => 1],
+    ["nombre" => "Monitor", "precio" => 5000, "stock" => 1]
+];
+
+$valor1 = $productos[0]["precio"] * $productos[0]["stock"];
+$valor2 = $productos[1]["precio"] * $productos[1]["stock"];
+$valor3 = $productos[2]["precio"] * $productos[2]["stock"];
+
+echo "Valor del Celular: $" . $valor1 . "\n";
+echo "Valor de los Auriculares: $" . $valor2 . "\n";
+echo "Valor del Monitor: $" . $valor3 . "\n";
+
+$total = $valor1 + $valor2 + $valor3;
+
+echo "Valor total del inventario: $" . $total;
