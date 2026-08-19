@@ -1216,3 +1216,185 @@ $resultado = obtenerProductosConStock($productos);
 foreach ($resultado as $producto) {
     echo $producto["nombre"] . "<br>";
 }
+
+//Sistema de otas
+
+$notas = [8, 5, 10, 6, 4];
+
+function promedio($notas) {
+    $suma = 0;
+
+    foreach ($notas as $nota) {
+        $suma = $suma + $nota;
+    }
+
+    return $suma / count($notas);
+}
+
+function aprobados($notas) {
+    $cantidad = 0;
+
+    foreach ($notas as $nota) {
+        if ($nota >= 6) {
+            $cantidad++;
+        }
+    }
+
+    return $cantidad;
+}
+
+function desaprobados($notas) {
+    $cantidad = 0;
+
+    foreach ($notas as $nota) {
+        if ($nota < 6) {
+            $cantidad++;
+        }
+    }
+
+    return $cantidad;
+}
+
+echo "Notas: ";
+
+foreach ($notas as $nota) {
+    echo $nota . " ";
+}
+
+echo "Promedio: " . promedio($notas);
+echo " Nota mayor: " . max($notas);
+echo " Nota menor: " . min($notas);
+echo " Aprobados: " . aprobados($notas);
+echo " Desaprobados: " . desaprobados($notas);
+
+
+// productos
+
+$productos = [
+    ["id"=>1, "nombre"=>"Teclado", "precio"=>1200, "stock"=>5, "categoria"=>"Informática"],
+    ["id"=>2, "nombre"=>"Mouse", "precio"=>800, "stock"=>0, "categoria"=>"Informática"],
+    ["id"=>3, "nombre"=>"Monitor", "precio"=>5000, "stock"=>3, "categoria"=>"Pantallas"]
+];
+
+function buscarProducto($productos, $id) {
+    foreach ($productos as $producto) {
+        if ($producto["id"] == $id) {
+            return $producto;
+        }
+    }
+
+    return null;
+}
+
+function valorInventario($productos) {
+    $total = 0;
+
+    foreach ($productos as $producto) {
+        $total = $total + $producto["precio"] * $producto["stock"];
+    }
+
+    return $total;
+}
+
+echo "Productos: ";
+
+foreach ($productos as $producto) {
+    echo $producto["nombre"] . " ";
+}
+
+echo " Productos con stock: ";
+
+foreach ($productos as $producto) {
+    if ($producto["stock"] > 0) {
+        echo $producto["nombre"] . " ";
+    }
+}
+
+echo " Valor inventario: $" . valorInventario($productos);
+
+$producto = buscarProducto($productos, 2);
+
+if ($producto != null) {
+    echo " Producto encontrado: " . $producto["nombre"];
+}
+
+echo " Producto más caro: " . $productos[2]["nombre"];
+
+
+// Sistema usuario 
+
+$usuarios = [
+    ["nombre"=>"Ana", "usuario"=>"ana123", "contraseña"=>"1234", "rol"=>"admin", "activo"=>true],
+    ["nombre"=>"Juan", "usuario"=>"juan123", "contraseña"=>"5678", "rol"=>"empleado", "activo"=>true]
+];
+
+function buscarUsuario($usuarios, $nombre) {
+    foreach ($usuarios as $usuario) {
+        if ($usuario["usuario"] == $nombre) {
+            return $usuario;
+        }
+    }
+
+    return null;
+}
+
+$usuarioIngresado = "ana123";
+$contraseñaIngresada = "1234";
+
+$usuario = buscarUsuario($usuarios, $usuarioIngresado);
+
+if ($usuario == null) {
+    echo "Usuario incorrecto";
+} elseif ($usuario["contraseña"] != $contraseñaIngresada) {
+    echo "Contraseña incorrecta";
+} elseif ($usuario["activo"] == false) {
+    echo "Usuario inactivo";
+} else {
+    echo "Bienvenido " . $usuario["nombre"];
+
+    if ($usuario["rol"] == "admin") {
+        echo " Administrador";
+    } else {
+        echo " Empleado";
+    }
+}
+
+
+// carro de compra 
+
+$carrito = [
+    ["nombre"=>"Teclado", "precio"=>1200, "cantidad"=>2],
+    ["nombre"=>"Mouse", "precio"=>800, "cantidad"=>1],
+    ["nombre"=>"Auriculares", "precio"=>2000, "cantidad"=>1]
+];
+
+function subtotal($producto) {
+    return $producto["precio"] * $producto["cantidad"];
+}
+
+function total($carrito) {
+    $total = 0;
+
+    foreach ($carrito as $producto) {
+        $total = $total + subtotal($producto);
+    }
+
+    return $total;
+}
+
+foreach ($carrito as $producto) {
+    echo $producto["nombre"];
+    echo " Subtotal: $" . subtotal($producto);
+}
+
+$totalCompra = total($carrito);
+
+echo " Total: $" . $totalCompra;
+
+if ($totalCompra > 4000) {
+    $totalCompra = $totalCompra * 0.90;
+}
+
+echo " Total final: $" . $totalCompra;
+
+?>
