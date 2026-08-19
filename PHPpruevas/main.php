@@ -875,3 +875,221 @@ echo "Valor del Monitor: $" . $valor3 . "\n";
 $total = $valor1 + $valor2 + $valor3;
 
 echo "Valor total del inventario: $" . $total;
+
+//stock y buscar lo profucos 
+
+
+$productos = [
+    [
+        "nombre" => "Laptop",
+        "precio" => 25000,
+        "stock" => 1
+    ],
+    [
+        "nombre" => "Teclado",
+        "precio" => 1500,
+        "stock" => 1
+    ],
+    [
+        "nombre" => "Mouse",
+        "precio" => 1000,
+        "stock" => 1
+    ]
+];
+
+$buscar = "Teclado";
+
+echo "Producto que se desea buscar: ";
+echo $buscar;
+echo "\n";
+
+foreach ($productos as $producto) {
+
+    echo "Buscando producto...\n";
+    echo "Producto actual: ";
+    echo $producto["nombre"];
+    echo "\n";
+
+    if ($producto["nombre"] == $buscar) {
+
+        echo "¡Producto encontrado!\n";
+        echo "Nombre: ";
+        echo $producto["nombre"];
+        echo "\n";
+
+        echo "Precio: $";
+        echo $producto["precio"];
+        echo "\n";
+
+        echo "Stock: ";
+        echo $producto["stock"];
+        echo "\n";
+    }
+}
+
+//Buscar por la id 
+
+$productos = [
+    [
+        "id" => 1,
+        "nombre" => "Laptop",
+        "precio" => 25000,
+        "stock" => 1
+    ],
+    [
+        "id" => 2,
+        "nombre" => "Teclado",
+        "precio" => 1500,
+        "stock" => 1
+    ],
+    [
+        "id" => 3,
+        "nombre" => "Mouse",
+        "precio" => 1000,
+        "stock" => 1
+    ]
+];
+
+$idBuscar = 2;
+
+echo "ID buscar: ";
+echo $idBuscar;
+echo "\n";
+
+foreach ($productos as $producto) {
+
+    echo "Buscando producto\n";
+    echo "ID actual: ";
+    echo $producto["id"];
+    echo "\n";
+
+    if ($producto["id"] == $idBuscar) {
+
+        echo "Producto encontrado\n";
+
+        echo "ID: ";
+        echo $producto["id"];
+        echo "\n";
+
+        echo "Nombre: ";
+        echo $producto["nombre"];
+        echo "\n";
+
+        echo "Precio: $";
+        echo $producto["precio"];
+        echo "\n";
+
+        echo "Stock: ";
+        echo $producto["stock"];
+        echo "\n";
+    }
+}
+
+//caro productos
+
+$productos = [
+    [
+        "nombre" => "Laptop",
+        "precio" => 25000,
+        "stock" => 1
+    ],
+    [
+        "nombre" => "Teclado",
+        "precio" => 1500,
+        "stock" => 1
+    ],
+    [
+        "nombre" => "Mouse",
+        "precio" => 1000,
+        "stock" => 1
+    ]
+];
+
+$productoMasCaro = $productos[0];
+
+foreach ($productos as $producto) {
+
+    echo "Comparando precios...\n";
+
+    if ($producto["precio"] > $productoMasCaro["precio"]) {
+        $productoMasCaro = $producto;
+    }
+}
+
+echo "Producto más caro:\n";
+
+echo "Nombre: ";
+echo $productoMasCaro["nombre"];
+echo "\n";
+
+echo "Precio: $";
+echo $productoMasCaro["precio"];
+echo "\n";
+
+echo "Stock: ";
+echo $productoMasCaro["stock"];
+echo "\n";
+
+
+//producto no encontrado 
+
+$productos = [
+    [
+        "id" => 1,
+        "nombre" => "Laptop",
+        "precio" => 25000,
+        "stock" => 1
+    ],
+    [
+        "id" => 2,
+        "nombre" => "Teclado",
+        "precio" => 1500,
+        "stock" => 1
+    ],
+    [
+        "id" => 3,
+        "nombre" => "Mouse",
+        "precio" => 1000,
+        "stock" => 1
+    ]
+];
+
+$idBuscar = 2;
+
+$encontrado = false;
+
+echo "ID que se desea buscar: ";
+echo $idBuscar;
+echo "\n";
+
+foreach ($productos as $producto) {
+
+    echo "Buscando producto\n";
+
+    if ($producto["id"] == $idBuscar) {
+
+        $encontrado = true;
+
+        echo "Producto encontrado\n";
+
+        echo "ID: ";
+        echo $producto["id"];
+        echo "\n";
+
+        echo "Nombre: ";
+        echo $producto["nombre"];
+        echo "\n";
+
+        echo "Precio: $";
+        echo $producto["precio"];
+        echo "\n";
+
+        echo "Stock: ";
+        echo $producto["stock"];
+        echo "\n";
+    }
+}
+
+if ($encontrado == false) {
+    echo "Producto no encontrado :C \n";
+}
