@@ -1111,3 +1111,18 @@ $numeros = [10,50,70,55,74];
      echo "la suma es de : " ;
 
  echo "$resultado";  
+
+ //aprovados
+
+ function contaraprobados($notas) {
+        $aprovados = 0; 
+     foreach ($notas as $nota) {
+        if ($nota >= 6) {
+         $aprovados++;
+        }
+     }
+     return $aprovados;
+ } 
+$notas = [8,5,6,7,9,4];
+
+echo contaraprobados($notas);
