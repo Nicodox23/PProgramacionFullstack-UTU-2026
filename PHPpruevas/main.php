@@ -1096,33 +1096,38 @@
 
 //Sumar numeros
 
-function sumarNumeros($numeros) {
-    $suma = 0;
-    foreach ($numeros as $numero) {
-        $suma += $numero;
-     }
-     return $suma;
-}
+function sumarNumeros($numeros) { 
+    $suma = 0; 
 
-$numeros = [10,50,70,55,74];
+    foreach ($numeros as $numero) { 
+        $suma += $numero; 
+    } 
 
-    $resultado = sumarNumeros($numeros);
+    return $suma; 
+} 
+ 
+$numeros = [10, 50, 70, 55, 74]; 
+ 
+$resultado = sumarNumeros($numeros); 
+ 
+echo "La suma es de: "; 
+echo "$resultado";   
+ 
+// aprobados 
+ 
+function contarAprobados($notas) { 
+    $aprobados = 0;  
 
-     echo "la suma es de : " ;
+    foreach ($notas as $nota) { 
+        if ($nota >= 6) { 
+            $aprobados++; 
+        } 
+    } 
 
- echo "$resultado";  
+    return $aprobados; 
+}  
 
- //aprovados
-
- function contaraprobados($notas) {
-        $aprovados = 0; 
-     foreach ($notas as $nota) {
-        if ($nota >= 6) {
-         $aprovados++;
-        }
-     }
-     return $aprovados;
- } 
-$notas = [8,5,6,7,9,4];
-
-echo contaraprobados($notas);
+$notas = [8, 5, 6, 7, 9, 4]; 
+ 
+echo "Cantidad de aprobados: ";
+echo contarAprobados($notas);
