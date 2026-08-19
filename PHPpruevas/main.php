@@ -1111,7 +1111,7 @@ $numeros = [10, 50, 70, 55, 74];
 $resultado = sumarNumeros($numeros); 
  
 echo "La suma es de: "; 
-echo "$resultado";   
+echo "$resultado \n";   
  
 // aprobados 
  
@@ -1129,5 +1129,90 @@ function contarAprobados($notas) {
 
 $notas = [8, 5, 6, 7, 9, 4]; 
  
-echo "Cantidad de aprobados: ";
-echo contarAprobados($notas);
+echo "Cantidad de aprobados: \n ";
+echo contarAprobados($notas) ;
+
+
+//buscarprofucto por la ID
+
+function buscarProductoPorId($productos, $id) {
+
+    foreach ($productos as $producto) {
+
+        if ($producto["id"] == $id) {
+            return $producto;
+        }
+    }
+
+    return null;
+}
+
+$productos = [
+    [
+        "id" => 1,
+        "nombre" => "Teclado",
+        "precio" => 1500
+    ],
+    [
+        "id" => 2,
+        "nombre" => "Mouse",
+        "precio" => 1000
+    ],
+    [
+        "id" => 3,
+        "nombre" => "Monitor",
+        "precio" => 5000
+    ]
+];
+
+$id = 2;
+
+$resultado = buscarProductoPorId($productos, $id);
+
+if ($resultado != null) {
+    echo "Producto encontrado: ";
+    echo $resultado["nombre"];
+} else {
+    echo "Producto no existe";
+}
+
+//Producto son stock
+
+
+function obtenerProductosConStock($productos) {
+
+    $productosConStock = [];
+
+    foreach ($productos as $producto) {
+
+        if ($producto["stock"] > 0) {
+            $productosConStock[] = $producto;
+        }
+    }
+
+    return $productosConStock;
+}
+
+$productos = [
+    [
+        "nombre" => "Teclado",
+        "precio" => 1500,
+        "stock" => 2
+    ],
+    [
+        "nombre" => "Mouse",
+        "precio" => 1000,
+        "stock" => 0
+    ],
+    [
+        "nombre" => "Monitor",
+        "precio" => 5000,
+        "stock" => 3
+    ]
+];
+
+$resultado = obtenerProductosConStock($productos);
+
+foreach ($resultado as $producto) {
+    echo $producto["nombre"] . "<br>";
+}
